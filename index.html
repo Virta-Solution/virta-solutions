@@ -53,6 +53,7 @@
         linear-gradient(to bottom, rgba(255,255,255,.08) 1px, transparent 1px);
       background-size: 60px 60px;
       animation: drift 24s linear infinite;
+      z-index: 0;
     }
     @keyframes drift{
       0%{background-position:0 0, 0 0}
@@ -75,6 +76,7 @@
       padding:36px;
       box-shadow: var(--shadow);
       position:relative;
+      z-index: 1;
       overflow:hidden;
       isolation:isolate;
     }
@@ -85,7 +87,7 @@
       position:absolute; inset:-2px;
       background: conic-gradient(from 120deg, transparent 0 35%, rgba(157,182,106,0.35) 40% 60%, transparent 65% 100%);
       filter: blur(14px); opacity:.35;
-      z-index:0;
+      z-index:-1;
     }
 
     .brand{
@@ -205,7 +207,7 @@
 
       <!-- Newsletter / Notify Form -->
       <!-- Option A (recommended on GitHub Pages): Formspree. Replace YOUR_FORM_ID below -->
-      <form class="form" action="https://formspree.io/f/mayvgjkl" method="POST" id="notify-form">
+      <form class="form" action="https://formspree.io/f/mzzvlgqp" method="POST" id="notify-form">
         <input class="input" type="email" name="email" placeholder="your@email.com" aria-label="Email address" required />
         <button class="btn" type="submit">Notify Me</button>
       </form>
@@ -273,7 +275,7 @@
           msg.textContent = "Thanks! We’ll be in touch soon.";
           form.reset();
         } else {
-          msg.textContent = "Hmm, something went wrong. You can email us at hello@virtasolutions.co.";
+          msg.textContent = "Hmm, something went wrong. You can email us at info@virtasolutions.co.";
         }
       }catch{
         msg.textContent = "Network error. Please try again or email us directly.";
