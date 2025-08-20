@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Virta Solutions — Coming Soon</title>
+  <meta name="description" content="Virta Solutions — Data Engineering, AI/ML, and DevOps services. Launching soon." />
+  <meta name="theme-color" content="#556B2F" />
+
+  <!-- Social cards -->
+  <meta property="og:title" content="Virta Solutions — Coming Soon" />
+  <meta property="og:description" content="We're launching soon. Data Engineering, AI/ML & DevOps services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0b0f10/ffffff&text=Virta+Solutions" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-1:#0b0f10;         /* deep charcoal */
+      --bg-2:#12181a;         /* slightly lighter */
+      --primary:#556B2F;      /* olive */
+      --primary-2:#9db66a;    /* light olive */
+      --text:#e7f0e5;         /* soft white/green */
+      --muted:#a6b3a4;
+      --glass:rgba(255,255,255,0.06);
+      --border:rgba(255,255,255,0.12);
+      --shadow:0 20px 60px rgba(0,0,0,0.35);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(85,107,47,0.18), transparent 60%),
+        radial-gradient(1000px 600px at 80% 90%, rgba(157,182,106,0.18), transparent 60%),
+        linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      overflow-x:hidden;
+    }
+
+    /* Subtle animated grid */
+    .grid{
+      position:fixed; inset:0; pointer-events:none; opacity:.15;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: drift 24s linear infinite;
+    }
+    @keyframes drift{
+      0%{background-position:0 0, 0 0}
+      100%{background-position:60px 60px, 60px 60px}
+    }
+
+    .wrap{
+      min-height:100%;
+      display:grid;
+      place-items:center;
+      padding:40px 20px;
+    }
+
+    .card{
+      width:min(820px, 94vw);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      backdrop-filter: blur(10px);
+      border-radius:var(--radius);
+      padding:36px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    /* Accent ring */
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: conic-gradient(from 120deg, transparent 0 35%, rgba(157,182,106,0.35) 40% 60%, transparent 65% 100%);
+      filter: blur(14px); opacity:.35;
+      z-index:0;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:14px; margin-bottom:10px; position:relative; z-index:1;
+    }
+
+    .logo{
+      --sz:56px;
+      width:var(--sz); height:var(--sz);
+      display:grid; place-items:center;
+      border-radius:14px;
+      background: radial-gradient(circle at 30% 30%, var(--primary-2), var(--primary));
+      color:#0b0f10; font-weight:800; font-family:Poppins, Inter, sans-serif; font-size:18px;
+      letter-spacing:0.5px;
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .brand h1{
+      font: 700 28px/1.1 Poppins, Inter, sans-serif; margin:0;
+    }
+    .tag{ color:var(--muted); font-size:14px; margin-top:4px }
+
+    .headline{
+      margin:28px 0 10px; position:relative; z-index:1;
+      font: 700 40px/1.15 Poppins, Inter, sans-serif;
+      letter-spacing:.2px;
+    }
+    .sub{
+      color:var(--muted); margin:0 0 26px; position:relative; z-index:1; font-size:16px;
+    }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      background: rgba(157,182,106,0.14);
+      border:1px solid rgba(157,182,106,0.35);
+      color:#dfe9d7;
+      padding:8px 12px; border-radius:999px; font-size:13px; letter-spacing:.2px;
+    }
+
+    /* Countdown */
+    .countdown{
+      display:grid; grid-template-columns: repeat(4, minmax(70px, 1fr));
+      gap:10px; margin:22px 0 8px;
+    }
+    .timebox{
+      text-align:center; padding:16px 10px;
+      border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.04)
+    }
+    .num{ font: 700 28px/1 Poppins, Inter, sans-serif; }
+    .lbl{ color:var(--muted); font-size:12px; letter-spacing:.3px; text-transform:uppercase; }
+
+    /* Form */
+    .form{
+      margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .input{
+      flex:1 1 260px; min-width:0; color:var(--text);
+      background: rgba(0,0,0,0.25);
+      border:1px solid var(--border);
+      border-radius:12px; padding:14px 14px; font-size:15px; outline:none;
+    }
+    .input::placeholder{ color:#98a598 }
+    .btn{
+      flex:0 0 auto; padding:14px 18px; border-radius:12px; border:1px solid rgba(157,182,106,0.45);
+      background:linear-gradient(180deg, rgba(157,182,106,0.95), rgba(85,107,47,0.95));
+      color:#0b0f10; font-weight:700; letter-spacing:.3px; cursor:pointer;
+      transition: transform .05s ease-in-out;
+    }
+    .btn:active{ transform: translateY(1px) }
+
+    /* Links */
+    .links{ display:flex; gap:14px; flex-wrap:wrap; margin-top:18px }
+    .link{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 12px;
+      border:1px solid var(--border); border-radius:999px; background:rgba(255,255,255,0.04);
+      color:var(--text); text-decoration:none; font-size:14px;
+    }
+    .link svg{ width:18px; height:18px }
+
+    /* Footer */
+    .footer{
+      margin-top:26px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:13px;
+    }
+
+    /* Responsive */
+    @media (max-width:640px){
+      .headline{ font-size:30px }
+      .countdown{ grid-template-columns: repeat(2, 1fr) }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid" aria-hidden="true"></div>
+  <main class="wrap">
+    <section class="card" role="region" aria-label="Coming Soon">
+      <header class="brand" aria-label="Brand">
+        <div class="logo" aria-hidden="true">VS</div>
+        <div>
+          <h1>Virta Solutions</h1>
+          <div class="tag">Data Engineering • AI/ML • DevOps</div>
+        </div>
+      </header>
+
+      <div class="pill" aria-label="Status">✨ Coming Soon</div>
+
+      <h2 class="headline">We’re launching soon.</h2>
+      <p class="sub">Our site is under construction. Leave your email and we’ll notify you the moment we launch.</p>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="timebox"><div class="num" id="dd">00</div><div class="lbl">Days</div></div>
+        <div class="timebox"><div class="num" id="hh">00</div><div class="lbl">Hours</div></div>
+        <div class="timebox"><div class="num" id="mm">00</div><div class="lbl">Minutes</div></div>
+        <div class="timebox"><div class="num" id="ss">00</div><div class="lbl">Seconds</div></div>
+      </div>
+
+      <!-- Newsletter / Notify Form -->
+      <!-- Option A (recommended on GitHub Pages): Formspree. Replace YOUR_FORM_ID below -->
+      <form class="form" action="https://formspree.io/f/mayvgjkl" method="POST" id="notify-form">
+        <input class="input" type="email" name="email" placeholder="your@email.com" aria-label="Email address" required />
+        <button class="btn" type="submit">Notify Me</button>
+      </form>
+      <div id="form-msg" role="status" style="margin-top:8px; font-size:14px; color:#cfe7c7;"></div>
+
+      <!-- Quick contact & socials -->
+      <div class="links">
+        <a class="link" href="mailto:info@virtasolutions.co" aria-label="Email us">
+          <!-- mail icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+          info@virtasolutions.co
+        </a>
+        <a class="link" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3A2 2 0 0 0 3 5a2 2 0 1 0 3.96 0A2 2 0 0 0 4.98 3zM3 8.5h4v12H3zM10 8.5h3.8v1.9h.1c.5-.9 1.7-2 3.6-2 3.8 0 4.5 2.5 4.5 5.7v6.4h-4v-5.7c0-1.4 0-3.3-2-3.3s-2.3 1.5-2.3 3.2v5.8h-4z"/></svg>
+          LinkedIn
+        </a>
+        <a class="link" href="#" aria-label="Calendar link for discovery call">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
+          Book a call
+        </a>
+      </div>
+
+      <footer class="footer">
+        <div>© <span id="year"></span> Virta Solutions</div>
+        <div>Made with ♥ for data‑first teams</div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // ===== Utilities =====
+    const $ = (id) => document.getElementById(id);
+
+    // Year
+    $("year").textContent = new Date().getFullYear();
+
+    // Countdown (set your target date here)
+    const target = new Date("2025-10-01T00:00:00Z").getTime(); // change as needed
+    const pad = (n) => String(n).padStart(2,"0");
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+      const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+      const h = Math.floor(diff / (1000*60*60));    diff -= h*60*60*1000;
+      const m = Math.floor(diff / (1000*60));       diff -= m*60*1000;
+      const s = Math.floor(diff / 1000);
+      $("dd").textContent = pad(d);
+      $("hh").textContent = pad(h);
+      $("mm").textContent = pad(m);
+      $("ss").textContent = pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Lightweight AJAX for Formspree success message (works without JS too)
+    const form = document.getElementById("notify-form");
+    const msg = document.getElementById("form-msg");
+    form.addEventListener("submit", async (e) => {
+      if (form.action.includes("YOUR_FORM_ID")) return; // skip if not configured
+      e.preventDefault();
+      const data = new FormData(form);
+      try{
+        const res = await fetch(form.action, { method:"POST", body:data, headers:{ "Accept":"application/json" }});
+        if (res.ok){
+          msg.textContent = "Thanks! We’ll be in touch soon.";
+          form.reset();
+        } else {
+          msg.textContent = "Hmm, something went wrong. You can email us at hello@virtasolutions.co.";
+        }
+      }catch{
+        msg.textContent = "Network error. Please try again or email us directly.";
+      }
+    });
+  </script>
+</body>
+</html>
