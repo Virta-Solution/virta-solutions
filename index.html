@@ -245,7 +245,7 @@
     $("year").textContent = new Date().getFullYear();
 
     // Countdown (set your target date here)
-    const target = new Date("2026-12-04T00:00:00Z").getTime(); // change as needed
+    const target = new Date("2026-12-04T00:00:00+05:00").getTime(); // PKT (UTC+5) — change as needed
     const pad = (n) => String(n).padStart(2,"0");
     function tick(){
       const now = Date.now();
